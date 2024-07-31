@@ -65,10 +65,7 @@ RUN git clone --recursive https://github.com/braillerap/DesktopBrailleRAP.git De
   && cd DesktopBrailleRAP/ \
   && git checkout main
 
-# exception
-#COPY --chown=builduser:builduser LinuxDesktopBrailleRAP.spec /home/builduser/DesktopBrailleRAP/LinuxDesktopBrailleRAP.spec
-#COPY --chown=builduser:builduser reqlinux.txt /home/builduser/DesktopBrailleRAP/reqlinux.txt
-#  && git checkout $(git describe --tags `git rev-list --tags --max-count=1`)
+
 
 WORKDIR /home/builduser/DesktopBrailleRAP
 
