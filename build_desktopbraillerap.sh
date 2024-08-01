@@ -4,31 +4,11 @@ export DISPLAY
 
 python3 -m venv venv
 source ./venv/bin/activate
-#pip install -r requirement.txt
-# pip install tk
-# pip install pyGobject
-# pip install pycairo
-# pip install QtPy
-# pip install pyQt5
-# pip install pyQtWebEngine
-# pip install PyQtWebEngine-Qt5
-# pip install pyserial
-# pip install pywebview
-# pip install pyinstaller
-# pip install pygi
-# pip install pypandoc
-# pip install zipp
-# pip install typing_extensions
-# pip install pywin32-ctypes
+
 printf "\e[1;34m######################\e[0m\n"
 printf "\e[1;34minstall python dependencies\e[0m\n" 
 printf "\e[1;34m######################\e[0m\n"
 pip install -r /home/builduser/DesktopBrailleRAP/requirement_linux.txt
-
-#printf "##########################\n" 
-#printf "install linux dependencies\n" 
-#printf "##########################\n" 
-#pip install -r reqlinux.txt
 
 printf "\e[1;34m######################\e[0m\n"
 printf "\e[1;34mplatform status\e[0m\n" 
@@ -49,25 +29,28 @@ pip freeze > /home/builduser/dist/requirement_test.txt
 git pull
 git checkout $BRANCH_BUILD 
 
+tree -L 4 ./package
+
 #printf "\e[1;34mBuild debug \e[0m\n"
 #npm run builddev
 printf "\e[1;34m######################\e[0m\n"
 printf "\e[1;34mBuild production ready\e[0m\n"
 printf "\e[1;34m######################\e[0m\n"
-npm run build
+npm run buildubuntu
 printf "\e[0mBuild finished\n"
 
 #npm run buildview
-pyinstaller LinuxDesktopBrailleRAP.spec
+#pyinstaller LinuxDesktopBrailleRAP.spec
 
- if [ $(find /home/builduser/DesktopBrailleRAP/dist/ -name "DesktopBrailleRAP-ubuntu") ];
+ if [ $(find /home/builduser/DesktopBrailleRAP/dist/ -name "desktopbraillerap-ubuntu.deb") ];
   then
     #ls -la /home/builduser/AccessBrailleRAP/build/
     #ls -la /home/builduser/AccessBrailleRAP/
     #ls -la /home/builduser/AccessBrailleRAP/dist/
     #cp -r /home/builduser/AccessBrailleRAP/build/* /home/builduser/dist/
+    md5sum /home/builduser/DesktopBrailleRAP/dist/desktopbraillerap-ubuntu.deb > /home/builduser/DesktopBrailleRAP/dist/desktopbraillerap-ubuntu.deb.md5sum
     cp -r /home/builduser/DesktopBrailleRAP/dist/* /home/builduser/dist/
-    md5sum /home/builduser/dist/DesktopBrailleRAP-ubuntu > /home/builduser/dist/DesktopBrailleRAP-ubuntu.md5sum
+    ls -lah /home/builduser/dist/*
     printf "\e[0mCompilation: \e[1;32mSucceeded\n"
     printf "\n"
     printf "####### #    # \n"
