@@ -29,10 +29,10 @@ pip freeze > /home/builduser/dist/requirement_test.txt
 
 
 # !! delete .gitignore !!
-ls -lah /home/builduser/DesktopBrailleRAP/package/ubuntu/desktopbraillerap-ubuntu/bin/.*
-rm /home/builduser/DesktopBrailleRAP/package/ubuntu/desktopbraillerap-ubuntu/bin/.*
+#ls -lah /home/builduser/DesktopBrailleRAP/package/ubuntu/desktopbraillerap-ubuntu/bin/.*
+#rm /home/builduser/DesktopBrailleRAP/package/ubuntu/desktopbraillerap-ubuntu/bin/.*
 
-tree -L 4 ./package
+tree  -a /home/builduser/DesktopBrailleRAP/package/ubuntu
 
 
 
