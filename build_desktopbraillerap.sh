@@ -59,7 +59,12 @@ printf "\e[0mBuild finished\n"
     #ls -la /home/builduser/AccessBrailleRAP/
     #ls -la /home/builduser/AccessBrailleRAP/dist/
     #cp -r /home/builduser/AccessBrailleRAP/build/* /home/builduser/dist/
-    md5sum /home/builduser/DesktopBrailleRAP/dist/desktopbraillerap-ubuntu.deb > /home/builduser/DesktopBrailleRAP/dist/desktopbraillerap-ubuntu.deb.md5sum
+    for f in /home/builduser/DesktopBrailleRAP/dist/desktopbraillerap-ubuntu-*.deb
+    do
+        md5sum $f > $f.md5sum
+        sed -i -r "s/ .*\/(.+)/  \1/g" $f.md5sum
+    done
+
     cp -r /home/builduser/DesktopBrailleRAP/dist/* /home/builduser/dist/
     ls -lah /home/builduser/dist/*
     printf "\e[0mCompilation: \e[1;32mSucceeded\n"
