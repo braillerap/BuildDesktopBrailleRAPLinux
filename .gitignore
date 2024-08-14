@@ -4,3 +4,5 @@ dist/requirement_test.txt
 dist/desktopbraillerap-ubuntu
 dist/desktopbraillerap-ubuntu.deb
 dist/desktopbraillerap-ubuntu.deb.md5sum
+dist/desktopbraillerap-ubuntu-*.deb
+dist/desktopbraillerap-ubuntu-*.deb.md5sum
