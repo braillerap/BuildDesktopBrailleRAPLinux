@@ -53,7 +53,7 @@ printf "\e[0mBuild finished\n"
 #npm run buildview
 #pyinstaller LinuxDesktopBrailleRAP.spec
 
- if [ $(find /home/builduser/DesktopBrailleRAP/dist/ -name "desktopbraillerap-ubuntu.deb") ];
+ if [ $(find /home/builduser/DesktopBrailleRAP/dist/ -name "desktopbraillerap-ubuntu-*.deb") ];
   then
     #ls -la /home/builduser/AccessBrailleRAP/build/
     #ls -la /home/builduser/AccessBrailleRAP/
