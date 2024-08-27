@@ -21,6 +21,7 @@ printf "python :%s %s\n" $(python --version)
 printf "nodejs :%s\n" $(node --version)
 printf "npm    :%s\n" $(npm --version)
 printf "branch :%s\n" "$BRANCH_BUILD"
+printf "ldd    :%s\n" $(ldd --version)
 
 rm -r /home/builduser/dist/*
 
