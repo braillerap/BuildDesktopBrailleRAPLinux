@@ -9,6 +9,8 @@ source ./venv/bin/activate
 git pull
 git checkout $BRANCH_BUILD 
 
+
+
 printf "\e[1;34m###########################\e[0m\n"
 printf "\e[1;34minstall python dependencies\e[0m\n" 
 printf "\e[1;34m###########################\e[0m\n"
@@ -23,6 +25,9 @@ printf "npm    :%s\n" $(npm --version)
 printf "branch :%s\n" "$BRANCH_BUILD"
 
 rm -r /home/builduser/dist/*
+
+git-changelog -x -s v0.6.0 -f `git tag | tail -n 1`
+git-changelog -x -s v0.6.0 -f `git tag | tail -n 1` | gzip > /home/builduser/dist/changelog.gz
 
 printf "writing python linux dependencies\n" 
 pip freeze > /home/builduser/dist/requirement_test.txt
