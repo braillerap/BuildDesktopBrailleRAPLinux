@@ -23,7 +23,6 @@ printf "python :%s %s\n" $(python --version)
 printf "nodejs :%s\n" $(node --version)
 printf "npm    :%s\n" $(npm --version)
 printf "branch :%s\n" "$BRANCH_BUILD"
-printf "ldd    :%s\n" $(ldd --version)
 
 rm -r /home/builduser/dist/*
 
@@ -55,6 +54,16 @@ printf "\e[1;34mBuild production ready\e[0m\n"
 printf "\e[1;34m######################\e[0m\n"
 npm run buildubuntu
 printf "\e[0mBuild finished\n"
+
+printf "\e[1;34m######################\e[0m\n"
+printf "\e[1;34mSome useful info\e[0m\n"
+printf "\e[1;34m######################\e[0m\n"
+ldd --version
+ldd /home/builduser/DesktopBrailleRAP/dist/desktopbraillerap-ubuntu
+dpkg -S 'libc.so.6'
+dpkg -S 'libdl.so.2'
+dpkg -S 'libpthread.so.0'
+dpkg -S 'libz.so.1'
 
 #npm run buildview
 #pyinstaller LinuxDesktopBrailleRAP.spec
